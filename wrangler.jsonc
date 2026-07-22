@@ -6,9 +6,9 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "pulseops-local",
-      // Local-only placeholder. Replace with the production D1 ID in Stage 11.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_name": "pulseops-production",
+      "database_id": "71553961-d98a-4dbb-933f-997fec481e1f",
+      "preview_database_id": "DB",
       "migrations_dir": "drizzle",
     },
   ],
