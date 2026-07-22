@@ -1,0 +1,247 @@
+.page {
+  display: grid;
+  gap: var(--space-6);
+}
+.breadcrumb {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-sm);
+}
+.breadcrumb span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+.eyebrow,
+.panelEyebrow {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header h1 {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  line-height: 0.95;
+}
+.description {
+  max-width: 44rem;
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+.headerBadges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.simulationMarker,
+.demoMarker {
+  color: var(--color-warning);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.relatedLink {
+  flex: 0 0 auto;
+}
+.stateActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.panel {
+  min-width: 0;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+.panelHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.panelHeader h2 {
+  margin-top: var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+}
+.panelHeader > span {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-sm);
+}
+.reliabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+.reliabilityGrid div,
+.incidentMeta div {
+  display: grid;
+  gap: var(--space-1);
+}
+.reliabilityGrid dt,
+.incidentMeta dt {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+.reliabilityGrid dd,
+.incidentMeta dd {
+  margin: 0;
+  line-height: 1.45;
+}
+.meeting {
+  color: var(--color-accent);
+}
+.below {
+  color: var(--color-critical);
+}
+.telemetry {
+  min-height: 28rem;
+}
+.detailsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+.contextList,
+.incidentList {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.contextList li,
+.incidentList li {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border);
+}
+.contextList li:first-child,
+.incidentList li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.contextList a,
+.incidentTitle a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+}
+.contextList p {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.incidentList li {
+  display: grid;
+}
+.incidentTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.incidentBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.incidentMeta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+.skeleton {
+  display: grid;
+  gap: var(--space-6);
+}
+.skeletonHeader,
+.skeletonSummary,
+.skeletonChart {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+}
+.skeletonHeader {
+  height: 11rem;
+}
+.skeletonSummary {
+  height: 10rem;
+}
+.skeletonChart {
+  height: 28rem;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 64rem) {
+  .reliabilityGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 48rem) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+  }
+  .panel {
+    padding: var(--space-5);
+  }
+  .reliabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .telemetry {
+    min-height: 24rem;
+  }
+}
+@media (max-width: 28rem) {
+  .panelHeader,
+  .contextList li,
+  .incidentTitle {
+    align-items: start;
+    flex-direction: column;
+  }
+  .reliabilityGrid,
+  .incidentMeta {
+    grid-template-columns: 1fr;
+  }
+}

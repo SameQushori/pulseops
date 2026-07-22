@@ -1,0 +1,75 @@
+.page {
+  display: grid;
+  align-content: start;
+  gap: var(--space-6);
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 13ch;
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.description {
+  max-width: 42rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+}
+
+.panel {
+  display: grid;
+  min-height: 8.5rem;
+  align-content: center;
+  gap: var(--space-3);
+  max-width: 42rem;
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.dataSummary {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.dataSummary strong {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+}
+
+.dataSummary span {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.panelLabel {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.standalone {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  padding: var(--space-8) var(--page-gutter);
+}

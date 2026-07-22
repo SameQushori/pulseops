@@ -1,0 +1,167 @@
+.page {
+  display: grid;
+  gap: var(--space-8);
+}
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+.eyebrow,
+.summary span {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header h1 {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  line-height: 0.95;
+}
+.description {
+  max-width: 42rem;
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+.summary {
+  display: grid;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+  text-align: right;
+}
+.summary strong {
+  font-size: var(--font-size-lg);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.grid > li {
+  min-width: 0;
+}
+.staticCard {
+  height: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+.card {
+  display: grid;
+  height: 100%;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+.cardHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.cardHeader p {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+.serviceName {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+.simulationMarker {
+  color: var(--color-warning);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: auto 0 0;
+}
+.metrics div {
+  display: grid;
+  gap: var(--space-1);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+.metrics dt {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+.metrics dd {
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+.meeting {
+  color: var(--color-accent) !important;
+}
+.below {
+  color: var(--color-critical) !important;
+}
+.skeleton {
+  display: grid;
+  gap: var(--space-8);
+}
+.skeletonHeader,
+.skeletonCard {
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+}
+.skeletonHeader {
+  width: min(34rem, 80%);
+  height: 8rem;
+}
+.skeletonCard {
+  min-height: 18rem;
+  border: 1px solid var(--color-border);
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 48rem) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+  }
+  .summary {
+    text-align: left;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 28rem) {
+  .cardHeader {
+    align-items: start;
+    flex-direction: column;
+  }
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

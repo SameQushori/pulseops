@@ -1,0 +1,16 @@
+.iconButton {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  background: var(--color-surface-raised);
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  color: var(--color-text-primary);
+  background: var(--color-surface-hover);
+}

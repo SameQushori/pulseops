@@ -1,0 +1,100 @@
+.card {
+  --glow-color: var(--color-accent);
+  --glow-soft: color-mix(in srgb, var(--glow-color) 18%, transparent);
+  --glow-visible: clamp(0, calc((var(--edge-proximity) - 38) / 62), 1);
+
+  position: relative;
+  display: grid;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  isolation: isolate;
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.warning {
+  --glow-color: var(--color-warning);
+}
+
+.critical {
+  --glow-color: var(--color-critical);
+}
+
+.mesh,
+.edgeLight {
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.mesh {
+  inset: -1px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--cursor-angle) at center,
+    transparent 0 34%,
+    var(--glow-color) 43%,
+    transparent 53% 100%
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.edgeLight {
+  inset: -0.4rem;
+  border: 1px solid color-mix(in srgb, var(--glow-color) 48%, transparent);
+  box-shadow: 0 0 1.25rem var(--glow-soft);
+  mask-image: conic-gradient(
+    from var(--cursor-angle) at center,
+    #000 0 8%,
+    transparent 18% 82%,
+    #000 92% 100%
+  );
+}
+
+.card:hover .mesh,
+.card:hover .edgeLight,
+.card:focus-within .mesh,
+.card:focus-within .edgeLight {
+  opacity: var(--glow-visible);
+}
+
+.card:focus-within .mesh {
+  opacity: 0.45;
+}
+
+.card:focus-within .edgeLight {
+  opacity: 0.22;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  height: 100%;
+  border-radius: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh,
+  .edgeLight {
+    transition: none;
+    mask-image: none;
+  }
+
+  .card:hover .mesh,
+  .card:focus-within .mesh {
+    opacity: 0.28;
+  }
+
+  .card:hover .edgeLight,
+  .card:focus-within .edgeLight {
+    opacity: 0;
+  }
+}

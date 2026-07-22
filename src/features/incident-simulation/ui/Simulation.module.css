@@ -1,0 +1,128 @@
+.panel {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.copy,
+.statusBlock {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.titleRow svg {
+  color: var(--color-warning);
+}
+
+.titleRow h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.025em;
+}
+
+.copy > p:last-child,
+.feedback {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.statusBlock strong {
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.progressList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.progressList li {
+  min-width: 0;
+  padding-top: var(--space-2);
+  border-top: 3px solid var(--color-border-strong);
+  color: var(--color-text-subtle);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.progressList li[data-complete='true'] {
+  border-color: var(--color-accent);
+  color: var(--color-text-muted);
+}
+
+.progressList li[data-current='true'] {
+  border-color: var(--color-warning);
+  color: var(--color-text-primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.feedback {
+  min-height: 1.5rem;
+  padding: var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface-sunken);
+}
+
+@media (min-width: 68rem) {
+  .panel {
+    grid-template-columns: minmax(15rem, 1fr) minmax(26rem, 1.4fr) auto;
+    align-items: center;
+  }
+
+  .feedback {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 34rem) {
+  .progressList {
+    grid-template-columns: 1fr;
+  }
+
+  .progressList li {
+    padding: 0 0 0 var(--space-3);
+    border-top: 0;
+    border-left: 3px solid var(--color-border-strong);
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .progressList li {
+    transition: none;
+  }
+}
